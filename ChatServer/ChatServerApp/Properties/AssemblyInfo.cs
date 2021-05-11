@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("ChatServer")]
+[assembly: AssemblyTitle("ChatServerApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ChatServer")]
+[assembly: AssemblyProduct("ChatServerApp")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("476afba6-15d3-4151-aee3-f6d07ebca80a")]
+[assembly: Guid("617630ea-4bd8-4d40-9a37-832b7ea45ea7")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
