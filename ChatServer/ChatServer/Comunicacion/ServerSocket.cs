@@ -30,7 +30,7 @@ namespace ChatServer.Comunicacion
                 //1. Crear un Socket
                 this.servidor = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 //2. Tomar control del puerto
-                IPAddress.Parse("192.168.0.5");
+              //IPAddress.Parse("192.168.0.5");  
                 this.servidor.Bind(new IPEndPoint(IPAddress.Any, this.puerto));
                 //3. Definir cuantos clientes atenderé
                 this.servidor.Listen(10);
@@ -38,10 +38,8 @@ namespace ChatServer.Comunicacion
             }
             catch (Exception ex)
             {
-
                 return false;
             }
-
         }
 
 

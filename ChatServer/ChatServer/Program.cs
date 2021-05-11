@@ -17,18 +17,33 @@ namespace ChatServer
             ServerSocket servidor = new ServerSocket(puerto);
             if (servidor.Iniciar())
             {
-                //Obtener cliente
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Esperando Cliente...");
-                if (servidor.ObtenerCliente())
+                while (true)
                 {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("Conexion Establecida!");
-                    Console.WriteLine("S: Hola Mundo");
-                    servidor.Escribir("Hola mundo cliente");
-                    string mensaje = servidor.Leer();
-                    Console.WriteLine("C:{0}", mensaje);
-                    servidor.CerrarConexion();
+                    //Obtener cliente
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Esperando Cliente...");
+                    if (servidor.ObtenerCliente())
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("Conexion Establecida!");
+                        //Protocolo de comunicacion
+                        string mensaje = "";
+                        while (mensaje.ToLower() != "chao")
+                        {
+                            //Leo el mensaje del Cliente
+                            mensaje = servidor.Leer();
+                            Console.WriteLine("Cliente: {0}", mensaje);
+                            if (mensaje.ToLower() != "chao")
+                            {
+                                //El cliente espera una respuesta
+                                Console.WriteLine("Digame lo que quiere Señor");
+                                mensaje = Console.ReadLine().Trim();
+                                Console.WriteLine("Servidor: {0}", mensaje);
+                                servidor.Escribir(mensaje);
+                            }
+                        }
+                        servidor.CerrarConexion();
+                    }
                 }
             }
             else
